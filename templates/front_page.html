@@ -1,0 +1,39 @@
+{% extends 'main_page.html' %}
+{% load static %}
+
+{% block tytul %}Dominik Radziszewski{% endblock %}
+{% block static %}<link rel="stylesheet" href="{% static 'front_page.css' %}">{% endblock %}
+
+{% block body %}
+    <section class="wallpapper">
+        <img src="media/codding.png" alt="The photo of code.">
+        <span class="centered">Dominik Radziszewski</span>
+        <span class="centered2">Twórca stron oraz aplikacji internetowych</span>
+    </section>
+    <section class="nav-action-plan">
+        <h3>Jak podchodzę do sprawy:</h3>
+    </section>
+    <section class="action-plan">
+        <div class="container text-center">
+          <div class="row">
+            <div class="col">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <h4>Wywiad</h4>
+              <p>Na początku zaczynam od wywiadu, klient przedstawia swoje zapotrzebowanie na strone.</p>
+            </div>
+            <div class="col">
+              <i class="fa-solid fa-laptop"></i>
+              <h4>Projekt</h4>
+              <span>Na drugim spotkaniu przedstawiam wersje wizualną z użyciem oprogramowania AdobeXD.</span>
+            </div>
+            <div class="col">
+              <i class="fa-solid fa-code"></i>
+              <h4>Efekt</h4>
+              <span>Tworzę strone zgodnie z modelem w AdobeXD oraz wrzucam ją do sieci.</span>
+            </div>
+          </div>
+        </div>
+    </section>
+
+
+{% endblock %}

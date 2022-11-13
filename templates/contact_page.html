@@ -1,0 +1,12 @@
+{% extends 'main_page.html' %}
+{% load static %}
+
+{% block tytul %}Dominik Radziszewski{% endblock %}
+{% block static %}<link rel="stylesheet" href="{% static 'contact_page.css' %}">{% endblock %}
+
+{% block body %}
+    {% for file in contact %}
+        <p>{{ file.emailOfContact }}</p>
+    {% endfor %}
+    <p>HWDP</p>
+{% endblock %}
