@@ -27,8 +27,9 @@ class Post(models.Model):
 
 
 class PicturesOfPost(models.Model):
-    pictureOfPost = models.ImageField(upload_to="pictures_of_post", null=True, blank=True)
     whichPost = models.ForeignKey(Post, on_delete=models.CASCADE)
+    pictureOfPost = models.ImageField(upload_to="pictures_of_post", null=True, blank=True)
+    descriptionOfPicture = models.TextField(null=True, blank=True, max_length=1024)
 
     def __str__(self):
         return self.picture_of_post()

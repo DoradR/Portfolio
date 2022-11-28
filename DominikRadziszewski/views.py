@@ -9,7 +9,8 @@ def front_page(request):
 
 def projects_page(request):
     posts = Post.objects.all()
-    return render(request, 'projects_page.html', {'posts': posts})
+    pictures = PicturesOfPost.objects.order_by('whichPost')
+    return render(request, 'projects_page.html', {'posts': posts, 'pictures': pictures})
 
 
 def contact_page(request):
