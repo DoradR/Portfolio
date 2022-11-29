@@ -1,0 +1,41 @@
+.projects img{
+    width: 80%;
+    margin: 5%;
+}
+
+.projects {
+    width: 90%;
+    margin: 80px 5% 0 5%;
+}
+
+.projects h1{
+    margin-top: 20px;
+}
+
+@media only screen  and (max-width: 820px){
+    .projects h1{
+      font-size: 1rem;
+    }
+}
+
+.button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media only screen  and (max-width: 820px){
+    .button a{
+        width: 21%;
+        font-size: 8px;
+    }
+}
+
+.projects span{
+    font-size: 1.5rem;
+}
+
+@media only screen  and (max-width: 820px){
+    .projects span{
+        font-size: 1rem;
+    }
+}

@@ -5,7 +5,25 @@
 {% block static %}<link rel="stylesheet" href="{% static 'projects_page.css' %}">{% endblock %}
 
 {% block body %}
-    {% for picture in pictures %}
-        <h6>{{ picture.descriptionOfPicture }}</h6>
-    {% endfor %}
+    <section class="projects">
+        {% for post in posts %}
+            <h1>{{ post.nameOfPost }}</h1>
+            <div class="row">
+                <div class="col-sm-3">
+                    {% for picture in pictures %}
+                        {% if picture.whichPost == post %}
+                            <img src="/media/{{ picture.pictureOfPost }}">
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="col-sm-9">
+                    <span>{{ post.descriptionOfPost }}</span>
+                </div>
+            </div>
+            <div class="button">
+                <a href="{% url 'details_of_project_page' post.id %}" class="btn btn-primary">Pokaż więcej</a>
+            </div>
+            <hr>
+        {% endfor %}
+    </section>
 {% endblock %}
