@@ -2,8 +2,37 @@
 {% load static %}
 
 {% block tytul %}Opis projektu{% endblock %}
-{% block static %}<link rel="stylesheet" href="{% static 'details_of_project_page.css' %}">{% endblock %}
+{% block static %}
+    <link rel="stylesheet" href="{% static 'details_of_project_page.css' %}">
+{% endblock %}
 
 {% block body %}
-    <p>HWDP</p>
+    <section class="photos">
+        {% for picture in picturesOfProject %}
+            <div class="row">
+                <div class="col-sm-3">
+                    <img id="myImg" src="/media/{{ picture.pictureOfPost }}" alt="{{ picture.descriptionOfPicture }}" style="width:100%;max-width:300px">
+                    <script src="{% static 'details_of_project_page.js' %}"></script>
+                    <div id="myModal" class="modal">
+                      <span class="close">&times;</span>
+                      <img class="modal-content" id="img01">
+                      <div id="caption"></div>
+                    </div>
+                </div>
+                <div class="col-sm-9">
+                    <span>{{ picture.descriptionOfPicture }}</span>
+                </div>
+                <hr>
+            </div>
+{#            <div class="row">#}
+{#                <div class="col-sm-9">#}
+{#                    <span>{{ picture.descriptionOfPicture }}</span>#}
+{#                </div>#}
+{#                <div class="col-sm-3">#}
+{#                    <img src="/media/{{ picture.pictureOfPost }}" alt="{{ picture.descriptionOfPicture }}">#}
+{#                </div>#}
+{#                <hr>#}
+{#            </div>#}
+        {% endfor %}
+    </section>
 {% endblock %}
