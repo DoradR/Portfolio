@@ -21,6 +21,7 @@ class Post(models.Model):
     nameOfPost = models.CharField(null=False, blank=False, max_length=64)
     categoryOfPost = models.ForeignKey(Category, on_delete=models.CASCADE)
     descriptionOfPost = models.TextField(null=False, blank=False, max_length=1024)
+    linkToSite = models.CharField(null=True, blank=True, max_length=256)
 
     def __str__(self):
         return self.nameOfPost

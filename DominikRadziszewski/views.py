@@ -21,8 +21,9 @@ def contact_page(request):
 def details_of_project_page(request, id):
     post = get_object_or_404(Post, pk=id)
     picturesOfProject = PicturesOfPost.objects.filter(whichPost=post)
+    link = post.linkToSite
 
     if request.method == "POST":
         post.objects.filter(id)
 
-    return render(request, 'details_of_project_page.html', {'post': post, 'picturesOfProject': picturesOfProject})
+    return render(request, 'details_of_project_page.html', {'post': post, 'picturesOfProject': picturesOfProject, 'link': link})

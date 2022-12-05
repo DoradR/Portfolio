@@ -1,11 +1,14 @@
 .projects img{
-    width: 80%;
-    margin: 5%;
+    width: 60%;
+    margin: 10%;
+    border-style: inset;
+    border-color: brown;
+    border-radius: 10%;
 }
 
 .projects {
-    width: 90%;
-    margin: 80px 5% 0 5%;
+    width: 70%;
+    margin: 80px 15% 0 15%;
 }
 
 .projects h1{
@@ -31,7 +34,7 @@
 }
 
 .projects span{
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 @media only screen  and (max-width: 820px){
