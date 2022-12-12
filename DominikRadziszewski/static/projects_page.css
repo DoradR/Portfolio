@@ -1,3 +1,77 @@
+.nav-header {
+    margin: 90px 0 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-header h3 {
+    padding: 1rem;
+    background-color: #561c1c;
+    border-radius: 20px;
+    box-shadow: -2px 4px 10px red;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header img{
+    width: 20%;
+    border-radius: 35%;
+    margin-bottom: 20px;
+}
+
+@media only screen  and (max-width: 820px){
+    .header img{
+      width: 40%;
+    }
+}
+
+.header h6{
+    width: 70%;
+    color: #979595;
+}
+
+.technology {
+    margin: 90px 0 20px 0;
+}
+
+.nav-of-technology{
+    display: flex;
+    justify-content: center;
+}
+
+.technology h5{
+    text-align: center;
+    color: #979595;
+    margin-top: 10px;
+}
+
+.nav-of-technology h3 {
+    padding: 0.75rem;
+    background-color: #561c1c;
+    border-radius: 20px;
+    box-shadow: -2px 4px 10px red;
+}
+
+.frontend {
+    display: flex;
+    justify-content: center;
+}
+
+.backend {
+    display: flex;
+    justify-content: center;
+}
+
+.frameworks{
+    display: flex;
+    justify-content: center;
+}
+
 .projects img{
     width: 60%;
     margin: 10%;

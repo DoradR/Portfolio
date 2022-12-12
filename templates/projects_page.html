@@ -5,8 +5,12 @@
 {% block static %}<link rel="stylesheet" href="{% static 'projects_page.css' %}">{% endblock %}
 
 {% block body %}
+    <section class="nav-header">
+        <h3>Pare słów o mnie:</h3>
+    </section>
     <section class="header">
-        <h1>
+        <img src="/media/DominikRadziszewski.jpg" alt="The photo of me.">
+        <h6>
             Lorem Ipsum is simply dummy text of the printing and
             typesetting industry. Lorem Ipsum has been the industry's
             standard dummy text ever since the 1500s, when an
@@ -18,7 +22,48 @@
             Letraset sheets containing Lorem Ipsum passages, and
             more recently with desktop publishing software like
             Aldus PageMaker including versions of Lorem Ipsum.
-        </h1>
+        </h6>
+    </section>
+    <section class="technology">
+        <div class="nav-of-technology">
+            <h3>Jakie technologie wykorzystuję:</h3>
+        </div>
+        <h5>FRONTEND</h5>
+        <div class="frontend">
+            <div class="row">
+                <div class="col">
+                    <h6>HTML</h6>
+                </div>
+                <div class="col">
+                    <h6>CSS</h6>
+                </div>
+                <div class="col">
+                    <h6>JavaScript</h6>
+                </div>
+            </div>
+        </div>
+        <h5>BACKEND</h5>
+        <div class="backend">
+            <div class="row">
+                <div class="col">
+                    <h6>Python</h6>
+                </div>
+            </div>
+        </div>
+        <h5>FRAMEWORKS</h5>
+        <div class="frameworks">
+            <div class="row">
+                <div class="col">
+                    <h6>Bootstrap</h6>
+                </div>
+                <div class="col">
+                    <h6>Django</h6>
+                </div>
+                <div class="col">
+                    <h6></h6>
+                </div>
+            </div>
+        </div>
     </section>
     <section class="projects">
         {% for post in posts %}
