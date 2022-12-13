@@ -22,6 +22,7 @@ class Post(models.Model):
     categoryOfPost = models.ForeignKey(Category, on_delete=models.CASCADE)
     descriptionOfPost = models.TextField(null=False, blank=False, max_length=1024)
     linkToSite = models.CharField(null=True, blank=True, max_length=256)
+    samplePrice = models.PositiveSmallIntegerField(null=True, blank=True, default=300)
 
     def __str__(self):
         return self.nameOfPost

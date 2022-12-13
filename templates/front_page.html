@@ -10,6 +10,69 @@
         <span class="centered">Dominik Radziszewski</span>
         <span class="centered2">Twórca stron oraz aplikacji internetowych</span>
     </section>
+    <section class="nav-header" id="1">
+        <h3>Pare słów o mnie:</h3>
+    </section>
+    <section class="header">
+        <img src="/media/DominikRadziszewski.jpg" alt="The photo of me.">
+        <h6>
+            Lorem Ipsum is simply dummy text of the printing and
+            typesetting industry. Lorem Ipsum has been the industry's
+            standard dummy text ever since the 1500s, when an
+            unknown printer took a galley of type and scrambled
+            it to make a type specimen book. It has survived
+            not only five centuries, but also the leap into
+            electronic typesetting, remaining essentially unchanged.
+            It was popularised in the 1960s with the release of
+            Letraset sheets containing Lorem Ipsum passages, and
+            more recently with desktop publishing software like
+            Aldus PageMaker including versions of Lorem Ipsum.
+        </h6>
+    </section>
+    <section class="technology">
+        <div class="nav-of-technology">
+            <h3>Jakie technologie wykorzystuję:</h3>
+        </div>
+        <h4>FRONTEND</h4>
+        <div class="frontend">
+            <div class="row">
+                <div class="col">
+                    <img src="/media/icons/html.png">
+                    <h6>HTML</h6>
+                </div>
+                <div class="col">
+                    <img src="/media/icons/css.png">
+                    <h6>CSS</h6>
+                </div>
+                <div class="col">
+                    <img src="/media/icons/javascript.png">
+                    <h6>JavaScript</h6>
+                </div>
+            </div>
+        </div>
+        <h4>BACKEND</h4>
+        <div class="backend">
+            <div class="row">
+                <div class="col">
+                    <img src="/media/icons/python.png">
+                    <h6>Python</h6>
+                </div>
+            </div>
+        </div>
+        <h4>FRAMEWORKS</h4>
+        <div class="frameworks">
+            <div class="row">
+                <div class="col">
+                    <img src="/media/icons/bootstrap.png">
+                    <h6>Bootstrap</h6>
+                </div>
+                <div class="col">
+                    <img src="/media/icons/django.png">
+                    <h6>Django</h6>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="nav-action-plan">
         <h3>Jak podchodzę do sprawy:</h3>
     </section>
@@ -34,6 +97,29 @@
           </div>
         </div>
     </section>
-
-
+    <section class="nav-random-post">
+        <h3>Przykładowe projekty:</h3>
+    </section>
+    <section class="random-post">
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <div class="card">
+                    {% for picture in pictures %}
+                        {% if picture.whichPost == random_post %}
+                            <img src="/media/{{ picture.pictureOfPost }}" class="card-img-top">
+                        {% endif %}
+                    {% endfor %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ random_post.nameOfPost }}</h5>
+                        <p class="card-text">{{ random_post.descriptionOfPost }}</p>
+                        <a href="{% url 'details_of_project_page' random_post.id %}" class="btn btn-primary">Pokaż więcej</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <button type="button" onclick="location.href={% url 'projects_page' %}" class="btn btn-primary">Zobacz resztę projektów ->></button>
+            </div>
+        </div>
+    </section>
 {% endblock %}

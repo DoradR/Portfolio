@@ -1,118 +1,25 @@
-.nav-header {
-    margin: 90px 0 20px 0;
-    display: flex;
-    justify-content: center;
-}
-
-.nav-header h3 {
-    padding: 1rem;
-    background-color: #561c1c;
-    border-radius: 20px;
-    box-shadow: -2px 4px 10px red;
-}
-
-.header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.header img{
-    width: 20%;
-    border-radius: 35%;
-    margin-bottom: 20px;
-}
-
-@media only screen  and (max-width: 820px){
-    .header img{
-      width: 40%;
-    }
-}
-
-.header h6{
-    width: 70%;
-    color: #979595;
-}
-
-.technology {
-    margin: 90px 0 20px 0;
-}
-
-.nav-of-technology{
-    display: flex;
-    justify-content: center;
-}
-
-.technology h5{
-    text-align: center;
-    color: #979595;
-    margin-top: 10px;
-}
-
-.nav-of-technology h3 {
-    padding: 0.75rem;
-    background-color: #561c1c;
-    border-radius: 20px;
-    box-shadow: -2px 4px 10px red;
-}
-
-.frontend {
-    display: flex;
-    justify-content: center;
-}
-
-.backend {
-    display: flex;
-    justify-content: center;
-}
-
-.frameworks{
-    display: flex;
-    justify-content: center;
-}
-
 .projects img{
-    width: 60%;
-    margin: 10%;
+    width: 90%;
+    margin: 5%;
+    max-height: 350px;
     border-style: inset;
     border-color: brown;
     border-radius: 10%;
 }
 
+.card {
+    margin-bottom: 30px;
+}
+
+.card-title {
+    color: black;
+}
+
+.card-text {
+    color: black;
+}
+
 .projects {
-    width: 70%;
-    margin: 80px 15% 0 15%;
-}
-
-.projects h1{
-    margin-top: 20px;
-}
-
-@media only screen  and (max-width: 820px){
-    .projects h1{
-      font-size: 1rem;
-    }
-}
-
-.button {
-    display: flex;
-    justify-content: flex-end;
-}
-
-@media only screen  and (max-width: 820px){
-    .button a{
-        width: 21%;
-        font-size: 8px;
-    }
-}
-
-.projects span{
-    font-size: 1rem;
-}
-
-@media only screen  and (max-width: 820px){
-    .projects span{
-        font-size: 1rem;
-    }
+    width: 90%;
+    margin: 80px 5% 0 5%;
 }

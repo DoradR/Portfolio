@@ -1,10 +1,14 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Contact, Post, PicturesOfPost
+import random
 
 
 def front_page(request):
-    pictures = PicturesOfPost.objects.order_by()
-    return render(request, 'front_page.html', {'pictures': pictures})
+    pks = Post.objects.values_list('pk', flat=True)
+    random_pk = random.choice(pks)
+    random_post = Post.objects.get(pk=random_pk)
+    pictures = PicturesOfPost.objects.all()
+    return render(request, 'front_page.html', {'pictures': pictures, 'random_post': random_post})
 
 
 def projects_page(request):
