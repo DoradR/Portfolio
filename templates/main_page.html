@@ -44,5 +44,67 @@
         </div>
     </nav>
     {% block body %} {% endblock %}
+    <footer class="footer">
+      <div class="footer__addr">
+        <h1 class="footer__logo">Your Logo</h1>
+        <address>
+          <br>
+            <h6>Może coś kiedyś</h6>
+        </address>
+      </div>
+      <ul class="footer__nav">
+        <li class="nav__item">
+          <h2 class="nav__title">Linki</h2>
+          <ul class="nav__ul">
+            <li>
+              <a href="{% url 'front_page' %}">Strona główna</a>
+            </li>
+            <li>
+              <a href="#1">O mnie</a>
+            </li>
+            <li>
+              <a href="{% url 'projects_page' %}">Projekty</a>
+            </li>
+            <li>
+              <a href="#">Kontakt</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav__item">
+          <h2 class="nav__title">Kontakt</h2>
+          <ul class="nav__ul">
+            <li class="home-text">
+              <i class="fa-solid fa-house"></i>
+              <span>Środa Śląska, 55-300</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:dominik.radziszewski99@gmail.com">dominik.radziszewski99@gmail.com</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:790791116">790-791-116</a>
+            </li>
+          </ul>
+        </li>
+{#        <li class="nav__item">#}
+{#          <h2 class="nav__title">Support</h2>#}
+{#          <ul class="nav__ul">#}
+{#            <li>#}
+{#              <a href="#">FAQ</a>#}
+{#            </li>#}
+{#            <li>#}
+{#              <a href="#">Help Desk</a>#}
+{#            </li>#}
+{#            <li>#}
+{#              <a href="#">Forums</a>#}
+{#            </li>#}
+{#          </ul>#}
+{#        </li>#}
+      </ul>
+      <div class="legal">
+        <p>&copy; 2022 Copyright.</p>
+      </div>
+</footer>
 </body>
 </html>

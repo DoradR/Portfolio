@@ -5,10 +5,14 @@
 {% block static %}<link rel="stylesheet" href="{% static 'projects_page.css' %}">{% endblock %}
 
 {% block body %}
+    <section class="wallpapper">
+        <img src="/media/coffee.jpg" alt="The photo of coffee.">
+        <span class="centered">Strona ta zawiera wszystkie moje projekty zarówno przykładowe jak i te które zostały puszczone na produkcję</span>
+    </section>
     <section class="projects">
         <div class="row">
             {% for post in posts %}
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <div class="card">
                         {% for picture in pictures %}
                             {% if picture.whichPost == post %}
@@ -18,7 +22,7 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ post.nameOfPost }}</h5>
                             <p class="card-text">{{ post.descriptionOfPost }}</p>
-                            <a href="{% url 'details_of_project_page' post.id %}" class="btn btn-primary">Pokaż więcej</a>
+                            <a href="{% url 'details_of_project_page' post.id %}" class="btn btn-primary">Pokaż więcej ->></a>
                         </div>
                     </div>
                 </div>
