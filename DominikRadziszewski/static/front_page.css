@@ -238,6 +238,11 @@
     justify-content: center;
 }
 
+.col-sm-3 a{
+    color: white;
+    text-decoration: none;
+}
+
 .random-post .col-sm-6 {
     margin-bottom: 5%;
 }

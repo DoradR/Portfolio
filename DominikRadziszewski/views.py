@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Contact, Post, PicturesOfPost
+from .models import Contact, Post, PicturesOfPost, Category
 import random
 
 
@@ -11,10 +11,22 @@ def front_page(request):
     return render(request, 'front_page.html', {'pictures': pictures, 'random_post': random_post})
 
 
-def projects_page(request):
+def all_projects_page(request):
     posts = Post.objects.all()
     pictures = PicturesOfPost.objects.all()
-    return render(request, 'projects_page.html', {'posts': posts, 'pictures': pictures})
+    return render(request, 'all_projects_page.html', {'posts': posts, 'pictures': pictures})
+
+
+def filtered_by_website_page(request):
+    posts = Post.objects.filter(categoryOfPost=Category.objects.get(nameOfCategory="Strona Internetowa"))
+    pictures = PicturesOfPost.objects.all()
+    return render(request, 'all_projects_page.html', {'posts': posts, 'pictures': pictures})
+
+
+def filtered_by_application_page(request):
+    posts = Post.objects.filter(categoryOfPost=Category.objects.get(nameOfCategory="Aplikacja Internetowa"))
+    pictures = PicturesOfPost.objects.all()
+    return render(request, 'all_projects_page.html', {'posts': posts, 'pictures': pictures})
 
 
 def contact_page(request):

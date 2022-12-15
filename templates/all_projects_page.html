@@ -2,12 +2,25 @@
 {% load static %}
 
 {% block tytul %}Projekty{% endblock %}
-{% block static %}<link rel="stylesheet" href="{% static 'projects_page.css' %}">{% endblock %}
+{% block static %}<link rel="stylesheet" href="{% static 'all_projects_page.css' %}">{% endblock %}
 
 {% block body %}
     <section class="wallpapper">
         <img src="/media/coffee.jpg" alt="The photo of coffee.">
         <span class="centered">Strona ta zawiera wszystkie moje projekty zarówno przykładowe jak i te które zostały puszczone na produkcję</span>
+    </section>
+    <section class="filter">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'all_projects_page' %}">Wszystkie</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'filtered_by_application_page' %}">Aplikacje internetowe</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'filtered_by_website_page' %}">Strony Internetowe</a>
+          </li>
+        </ul>
     </section>
     <section class="projects">
         <div class="row">
