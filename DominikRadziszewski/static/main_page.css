@@ -54,9 +54,8 @@ html {
 
 .footer__logo {
   font-family: 'Pacifico', cursive;
-  font-weight: 400;
   text-transform: lowercase;
-  font-size: 2rem;
+  font-size: 4rem;
 }
 
 .nav__title {

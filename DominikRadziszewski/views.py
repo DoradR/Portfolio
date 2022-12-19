@@ -8,7 +8,8 @@ def front_page(request):
     random_pk = random.choice(pks)
     random_post = Post.objects.get(pk=random_pk)
     pictures = PicturesOfPost.objects.all()
-    return render(request, 'front_page.html', {'pictures': pictures, 'random_post': random_post})
+    contact = Contact.objects.all()
+    return render(request, 'front_page.html', {'pictures': pictures, 'random_post': random_post, 'contact': contact})
 
 
 def all_projects_page(request):
@@ -38,8 +39,9 @@ def details_of_project_page(request, id):
     post = get_object_or_404(Post, pk=id)
     picturesOfProject = PicturesOfPost.objects.filter(whichPost=post)
     link = post.linkToSite
+    title = post.nameOfPost
 
     if request.method == "POST":
         post.objects.filter(id)
 
-    return render(request, 'details_of_project_page.html', {'post': post, 'picturesOfProject': picturesOfProject, 'link': link})
+    return render(request, 'details_of_project_page.html', {'post': post, 'picturesOfProject': picturesOfProject, 'link': link, 'title': title})

@@ -7,6 +7,10 @@
 {% endblock %}
 
 {% block body %}
+    <section class="wallpapper">
+        <img src="/media/milkyway.jpg" alt="The photo of coffee.">
+        <span class="centered">{{ title }}</span>
+    </section>
     <section class="photos">
         {% for picture in picturesOfProject %}
             <div class="row">
