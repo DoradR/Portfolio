@@ -26,12 +26,18 @@
         <div class="row">
             {% for post in posts %}
                 <div class="col-sm-4">
-                    <div class="card">
-                        {% for picture in pictures %}
-                            {% if picture.whichPost == post %}
-                                <img src="/media/{{ picture.pictureOfPost }}" class="card-img-top">
-                            {% endif %}
-                        {% endfor %}
+                    <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                            {% for picture in pictures %}
+                                {% if picture.whichPost == post %}
+                                    <div class="swiper-slide"><img src="/media/{{ picture.pictureOfPost }}"></div>
+                                {% endif %}
+                            {% endfor %}
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                        <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+                        <script src="{% static 'all_projects_page.js' %}"></script>
                         <div class="card-body">
                             <h5 class="card-title">{{ post.nameOfPost }}</h5>
                             <p class="card-text">{{ post.descriptionOfPost }}</p>
