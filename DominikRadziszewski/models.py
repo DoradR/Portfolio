@@ -2,16 +2,19 @@ from django.db import models
 
 
 class Category(models.Model):
-    nameOfCategory = models.CharField(null=False, blank=False, max_length=32)
+    nameOfCategoryPolish = models.CharField(null=False, blank=False, max_length=32, default="Strona Internetowa")
+    nameOfCategoryEnglish = models.CharField(null=False, blank=False, max_length=32, default="Website")
 
     def __str__(self):
-        return self.nameOfCategory
+        return self.nameOfCategoryPolish
 
 
 class Contact(models.Model):
     emailOfContact = models.CharField(null=False, blank=False, max_length=64)
     phoneOfContact = models.IntegerField(null=False, blank=False)
-    descriptionOfContact = models.TextField(null=False, blank=False, max_length=512)
+    descriptionOfContactPolish = models.TextField(null=False, blank=False, max_length=512)
+    descriptionOfContactEnglish = models.TextField(null=False, blank=False, max_length=512)
+    pictureOfContact = models.ImageField(null=False, blank=False)
 
     def __str__(self):
         return "Dominik Radziszewski"
@@ -20,7 +23,8 @@ class Contact(models.Model):
 class Post(models.Model):
     nameOfPost = models.CharField(null=False, blank=False, max_length=64)
     categoryOfPost = models.ForeignKey(Category, on_delete=models.CASCADE)
-    descriptionOfPost = models.TextField(null=False, blank=False, max_length=1024)
+    descriptionOfPostPolish = models.TextField(null=False, blank=False, max_length=1024)
+    descriptionOfPostEnglish = models.TextField(null=False, blank=False, max_length=1024)
     linkToSite = models.CharField(null=True, blank=True, max_length=256)
     samplePrice = models.PositiveSmallIntegerField(null=True, blank=True, default=300)
 
@@ -31,7 +35,8 @@ class Post(models.Model):
 class PicturesOfPost(models.Model):
     whichPost = models.ForeignKey(Post, on_delete=models.CASCADE)
     pictureOfPost = models.ImageField(upload_to="pictures_of_post", null=True, blank=True)
-    descriptionOfPicture = models.TextField(null=True, blank=True, max_length=1024)
+    descriptionOfPicturePolish = models.TextField(null=True, blank=True, max_length=1024)
+    descriptionOfPictureEnglish = models.TextField(null=True, blank=True, max_length=1024)
 
     def __str__(self):
         return self.picture_of_post()

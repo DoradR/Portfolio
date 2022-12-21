@@ -16,12 +16,12 @@
                 <h3>Pare słów o mnie:</h3>
             </section>
             <section class="header">
-                <img src="/media/DominikRadziszewski.jpg" alt="The photo of me.">
-                <h6>
-                    {% for file in contact %}
-                        {{ file.descriptionOfContact }}
-                    {% endfor %}
-                </h6>
+                {% for file in contact %}
+                    <img src="/media/{{ file.pictureOfContact }}" alt="The photo of me.">
+                    <h6>
+                        {{ file.descriptionOfContactPolish }}
+                    </h6>
+                {% endfor %}
             </section>
         </div>
         <div class="col">
@@ -103,14 +103,21 @@
             <div class="col-sm-3"></div>
             <div class="col-sm-6">
                 <div class="card">
-                    {% for picture in pictures %}
-                        {% if picture.whichPost == random_post %}
-                            <img src="/media/{{ picture.pictureOfPost }}" class="card-img-top">
-                        {% endif %}
-                    {% endfor %}
+                    <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                            {% for picture in pictures %}
+                                {% if picture.whichPost == random_post %}
+                                    <div class="swiper-slide"><img src="/media/{{ picture.pictureOfPost }}"></div>
+                                {% endif %}
+                            {% endfor %}
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                        <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+                        <script src="{% static 'all_projects_page.js' %}"></script>
                     <div class="card-body">
                         <h5 class="card-title">{{ random_post.nameOfPost }}</h5>
-                        <p class="card-text">{{ random_post.descriptionOfPost }}</p>
+                        <p class="card-text">{{ random_post.descriptionOfPostPolish }}</p>
                         <a href="{% url 'details_of_project_page' random_post.id %}" class="btn btn-primary">Pokaż więcej</a>
                     </div>
                 </div>

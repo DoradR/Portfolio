@@ -4,7 +4,6 @@
 {% block tytul %}Projekty{% endblock %}
 {% block static %}
     <link rel="stylesheet" href="{% static 'all_projects_page.css' %}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
 {% endblock %}
 
 {% block body %}
@@ -30,6 +29,7 @@
             {% for post in posts %}
                 <div class="col-sm-4">
                     <div class="card">
+                        <h4 class="category-of-post">Typ: {{ post.categoryOfPost.nameOfCategoryPolish }}</h4>
                         <div class="swiper mySwiper">
                             <div class="swiper-wrapper">
                             {% for picture in pictures %}
@@ -44,7 +44,7 @@
                         <script src="{% static 'all_projects_page.js' %}"></script>
                         <div class="card-body">
                             <h5 class="card-title">{{ post.nameOfPost }}</h5>
-                            <p class="card-text">{{ post.descriptionOfPost }}</p>
+                            <p class="card-text">{{ post.descriptionOfPostPolish }}</p>
                             <a href="{% url 'details_of_project_page' post.id %}" class="btn btn-primary">Pokaż więcej ->></a>
                         </div>
                     </div>

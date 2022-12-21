@@ -14,16 +14,17 @@
     <section class="photos">
         {% for picture in picturesOfProject %}
             <div class="row">
-                <div class="col-sm-3">
-                    <img class="myImg" src="/media/{{ picture.pictureOfPost }}" alt="{{ picture.descriptionOfPicture }}" style="width:100%;max-width:300px">
+                <div class="col-sm-5">
+                    <img class="myImg" src="/media/{{ picture.pictureOfPost }}" alt="{{ picture.descriptionOfPicturePolish }}">
+                    <span>Kliknij aby powiększyć</span>
                     <div id="myModal" class="modal">
                       <span class="close">&times;</span>
                       <img class="modal-content" id="img01">
                       <div id="caption"></div>
                     </div>
                 </div>
-                <div class="col-sm-9">
-                    <span>{{ picture.descriptionOfPicture }}</span>
+                <div class="col-sm-7">
+                    <span>{{ picture.descriptionOfPicturePolish }}</span>
                 </div>
                 <hr>
             </div>

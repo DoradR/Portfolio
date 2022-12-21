@@ -19,13 +19,13 @@ def all_projects_page(request):
 
 
 def filtered_by_website_page(request):
-    posts = Post.objects.filter(categoryOfPost=Category.objects.get(nameOfCategory="Strona Internetowa"))
+    posts = Post.objects.filter(categoryOfPost=Category.objects.get(nameOfCategoryPolish="Strona Internetowa"))
     pictures = PicturesOfPost.objects.all()
     return render(request, 'all_projects_page.html', {'posts': posts, 'pictures': pictures})
 
 
 def filtered_by_application_page(request):
-    posts = Post.objects.filter(categoryOfPost=Category.objects.get(nameOfCategory="Aplikacja Internetowa"))
+    posts = Post.objects.filter(categoryOfPost=Category.objects.get(nameOfCategoryPolish="Aplikacja Internetowa"))
     pictures = PicturesOfPost.objects.all()
     return render(request, 'all_projects_page.html', {'posts': posts, 'pictures': pictures})
 
