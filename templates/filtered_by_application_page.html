@@ -51,3 +51,13 @@
         </div>
     </section>
 {% endblock %}
+{% block mail %}
+    {% for smt in contact %}
+        <a href="mailto:{{ smt.emailOfContact }}">{{ smt.emailOfContact }}</a>
+    {% endfor %}
+{% endblock %}
+{% block tel %}
+    {% for smt in contact %}
+        <a href="tel:{{ smt.phoneOfContact }}">{{ smt.phoneOfContact }}</a>
+    {% endfor %}
+{% endblock %}

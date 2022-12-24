@@ -66,6 +66,12 @@
     justify-content: center;
 }
 
+.nav-header :hover {
+    box-shadow: -2px 4px 10px red;
+    transform: scale(1.2);
+    transition: .8s;
+}
+
 .nav-header h3 {
     padding: 0.75rem;
     background-color: #561c1c;
@@ -104,6 +110,12 @@
 .nav-of-technology{
     display: flex;
     justify-content: center;
+}
+
+.nav-of-technology :hover {
+    box-shadow: -2px 4px 10px red;
+    transform: scale(1.2);
+    transition: .8s;
 }
 
 .technology h4{
@@ -163,6 +175,12 @@
     justify-content: center;
 }
 
+.nav-action-plan :hover {
+    box-shadow: -2px 4px 10px red;
+    transform: scale(1.2);
+    transition: .8s;
+}
+
 .nav-action-plan h3 {
     padding: 0.75rem;
     background-color: #561c1c;
@@ -201,6 +219,12 @@
     margin: 25px 0;
     display: flex;
     justify-content: center;
+}
+
+.nav-random-post :hover {
+    box-shadow: -2px 4px 10px red;
+    transform: scale(1.2);
+    transition: .8s;
 }
 
 .nav-random-post h3 {
@@ -274,4 +298,10 @@
 
 .random-post .col-sm-6 {
     margin-bottom: 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.random-post .card {
+    max-width: 600px;
 }

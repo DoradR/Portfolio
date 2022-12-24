@@ -15,19 +15,22 @@ def front_page(request):
 def all_projects_page(request):
     posts = Post.objects.all()
     pictures = PicturesOfPost.objects.all()
-    return render(request, 'all_projects_page.html', {'posts': posts, 'pictures': pictures})
+    contact = Contact.objects.all()
+    return render(request, 'all_projects_page.html', {'posts': posts, 'pictures': pictures, 'contact': contact})
 
 
 def filtered_by_website_page(request):
     posts = Post.objects.filter(categoryOfPost=Category.objects.get(nameOfCategoryPolish="Strona Internetowa"))
     pictures = PicturesOfPost.objects.all()
-    return render(request, 'all_projects_page.html', {'posts': posts, 'pictures': pictures})
+    contact = Contact.objects.all()
+    return render(request, 'all_projects_page.html', {'posts': posts, 'pictures': pictures, 'contact': contact})
 
 
 def filtered_by_application_page(request):
     posts = Post.objects.filter(categoryOfPost=Category.objects.get(nameOfCategoryPolish="Aplikacja Internetowa"))
     pictures = PicturesOfPost.objects.all()
-    return render(request, 'all_projects_page.html', {'posts': posts, 'pictures': pictures})
+    contact = Contact.objects.all()
+    return render(request, 'all_projects_page.html', {'posts': posts, 'pictures': pictures, 'contact': contact})
 
 
 def contact_page(request):
@@ -40,8 +43,9 @@ def details_of_project_page(request, id):
     picturesOfProject = PicturesOfPost.objects.filter(whichPost=post)
     link = post.linkToSite
     title = post.nameOfPost
+    contact = Contact.objects.all()
 
     if request.method == "POST":
         post.objects.filter(id)
 
-    return render(request, 'details_of_project_page.html', {'post': post, 'picturesOfProject': picturesOfProject, 'link': link, 'title': title})
+    return render(request, 'details_of_project_page.html', {'post': post, 'picturesOfProject': picturesOfProject, 'link': link, 'title': title, 'contact': contact})
