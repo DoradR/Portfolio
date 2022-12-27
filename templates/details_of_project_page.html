@@ -4,6 +4,7 @@
 {% block tytul %}Opis projektu{% endblock %}
 {% block static %}
     <link rel="stylesheet" href="{% static 'details_of_project_page.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 {% endblock %}
 
 {% block body %}
@@ -11,27 +12,93 @@
         <img src="/media/milkyway.jpg" alt="The photo of coffee.">
         <span class="centered">{{ title }}</span>
     </section>
-    <section class="photos">
-        {% for picture in picturesOfProject %}
-            <div class="row">
-                <div class="col-sm-5">
-                    <img class="myImg" src="/media/{{ picture.pictureOfPost }}" alt="{{ picture.descriptionOfPicturePolish }}">
-                    <span>Kliknij aby powiększyć</span>
-                    <div id="myModal" class="modal">
-                      <span class="close">&times;</span>
-                      <img class="modal-content" id="img01">
-                      <div id="caption"></div>
+    <section>
+        <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+            <div class="swiper-wrapper">
+                {% for picture in picturesOfProject %}
+                    <div class="swiper-slide">
+                        <img src="/media/{{ picture.pictureOfPost }}" alt="...">
+                        <h4>{{ picture.descriptionOfPicturePolish }}</h4>
                     </div>
-                </div>
-                <div class="col-sm-7">
-                    <span>{{ picture.descriptionOfPicturePolish }}</span>
-                </div>
-                <hr>
+                {% endfor %}
             </div>
-        {% endfor %}
-        <button type="button" onclick="location.href='http://{{ link }}/'" class="btn btn-primary">Odwiedź stronę ->></button>
-        <script src="{% static 'details_of_project_page.js' %}"></script>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        <div thumbsSlider="" class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                {% for picture in picturesOfProject %}
+                    <div class="swiper-slide">
+                        <img src="/media/{{ picture.pictureOfPost }}">
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    <script src="{% static 'swiper_in_details_of_project.js' %}"></script>
     </section>
+{#    <section class="photos">#}
+{#        {% for picture in picturesOfProject %}#}
+{#            <div class="row">#}
+{#                <div class="col-sm-5">#}
+{#                    <img class="myImg" src="/media/{{ picture.pictureOfPost }}" alt="{{ picture.descriptionOfPicturePolish }}">#}
+{#                    <span>Kliknij aby powiększyć</span>#}
+{#                    <div id="myModal" class="modal">#}
+{#                      <span class="close">&times;</span>#}
+{#                      <img class="modal-content" id="img01">#}
+{#                      <div id="caption"></div>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="col-sm-7">#}
+{#                    <span>{{ picture.descriptionOfPicturePolish }}</span>#}
+{#                </div>#}
+{#                <hr>#}
+{#            </div>#}
+{#        {% endfor %}#}
+{#    </section>#}
+{#    <section class="carousel-of-pictures">#}
+{#        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">#}
+{#            <div class="carousel-inner">#}
+{#                <div class="carousel-item active">#}
+{#                    <div class="card">#}
+{#                        <img class="myImg card-img-top" src="/media/codding.png" alt="...">#}
+{#                        <div id="myModal" class="modal">#}
+{#                            <span class="close">&times;</span>#}
+{#                            <img class="modal-content" id="img01">#}
+{#                            <div id="caption"></div>#}
+{#                        </div>#}
+{#                        <div class="card-body">#}
+{#                            <h4 class="card-text">Przesuń w prawo aby wyświetlić więcej zdjęć.</h4>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            {% for picture in picturesOfProject %}#}
+{#                <div class="carousel-item">#}
+{#                  <div class="card">#}
+{#                    <img class="myImg card-img-top" src="/media/{{ picture.pictureOfPost }}" alt="{{ picture.descriptionOfPicturePolish }}">#}
+{#                      <div id="myModal" class="modal">#}
+{#                          <span class="close">&times;</span>#}
+{#                          <img class="modal-content" id="img01">#}
+{#                          <div id="caption"></div>#}
+{#                      </div>#}
+{#                    <div class="card-body">#}
+{#                      <h4 class="card-text">{{ picture.descriptionOfPicturePolish }}</h4>#}
+{#                    </div>#}
+{#                  </div>#}
+{#                </div>#}
+{#            {% endfor %}#}
+{#          </div>#}
+{#          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">#}
+{#            <span class="carousel-control-prev-icon" aria-hidden="true"></span>#}
+{#            <span class="visually-hidden">Previous</span>#}
+{#          </button>#}
+{#          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">#}
+{#            <span class="carousel-control-next-icon" aria-hidden="true"></span>#}
+{#            <span class="visually-hidden">Next</span>#}
+{#          </button>#}
+{#        </div>#}
+{#        <script src="{% static 'details_of_project_page.js' %}"></script>#}
+{#    </section>#}
+    <button type="button" onclick="location.href='http://{{ link }}/'" class="btn btn-primary">Odwiedź stronę ->></button>
 {% endblock %}
 {% block mail %}
     {% for smt in contact %}
