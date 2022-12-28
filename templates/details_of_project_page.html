@@ -12,13 +12,22 @@
         <img src="/media/milkyway.jpg" alt="The photo of coffee.">
         <span class="centered">{{ title }}</span>
     </section>
+    <section class="nav-of-details">
+        <h3>Najważniejsze aspekty tej strony.</h3>
+    </section>
     <section>
         <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
             <div class="swiper-wrapper">
                 {% for picture in picturesOfProject %}
                     <div class="swiper-slide">
-                        <img src="/media/{{ picture.pictureOfPost }}" alt="...">
-                        <h4>{{ picture.descriptionOfPicturePolish }}</h4>
+                        <div class="row">
+                            <div class="col-sm-9">
+                                <img src="/media/{{ picture.pictureOfPost }}" alt="...">
+                            </div>
+                            <div class="col-sm-3">
+                                <h4>{{ picture.descriptionOfPicturePolish }}</h4>
+                            </div>
+                        </div>
                     </div>
                 {% endfor %}
             </div>

@@ -5,10 +5,60 @@
 {% block static %}<link rel="stylesheet" href="{% static 'contact_page.css' %}">{% endblock %}
 
 {% block body %}
-    {% for file in contact %}
-        <p>{{ file.emailOfContact }}</p>
-    {% endfor %}
-    <p>HWDP</p>
+    <section class="wallpapper">
+        <img src="/media/contact-us.jpg" alt="The photo of coffee.">
+    </section>
+    <section>
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="container">
+                    <div class="content">
+                      <div class="left-side">
+                        <div class="address details">
+                          <i class="fas fa-map-marker-alt"></i>
+                          <div class="topic">Address</div>
+                          <div class="text-one">Surkhet, NP12</div>
+                          <div class="text-two">Birendranagar 06</div>
+                        </div>
+                        <div class="phone details">
+                          <i class="fas fa-phone-alt"></i>
+                          <div class="topic">Phone</div>
+                          <div class="text-one">+0098 9893 5647</div>
+                          <div class="text-two">+0096 3434 5678</div>
+                        </div>
+                        <div class="email details">
+                          <i class="fas fa-envelope"></i>
+                          <div class="topic">Email</div>
+                          <div class="text-one">codinglab@gmail.com</div>
+                          <div class="text-two">info.codinglab@gmail.com</div>
+                        </div>
+                      </div>
+                      <div class="right-side">
+                        <div class="topic-text">Send us a message</div>
+                        <p>If you have any work from me or any types of quries related to my tutorial, you can send me message from here. It's my pleasure to help you.</p>
+                      <form action="#">
+                        <div class="input-box">
+                          <input type="text" placeholder="Enter your name">
+                        </div>
+                        <div class="input-box">
+                          <input type="text" placeholder="Enter your email">
+                        </div>
+                        <div class="input-box message-box">
+                          <input type="text" placeholder="Enter your message">
+                        </div>
+                        <div class="button">
+                          <input type="button" value="Send Now" >
+                        </div>
+                      </form>
+                    </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-sm-4">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1838.63510463388!2d16.591373575532696!3d51.163863884749205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470fa3c120f22679%3A0xa131abaf64efb0c8!2zUnluZWsgLSDFmnJvZGEgxZpsxIVza2E!5e0!3m2!1spl!2sde!4v1672261502933!5m2!1spl!2sde" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
 {% endblock %}
 {% block mail %}
     {% for smt in contact %}
