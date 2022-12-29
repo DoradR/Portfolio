@@ -17,7 +17,7 @@
     </section>
     <section>
         <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
-            <div class="swiper-wrapper">
+            <div class="swiper-wrapper" style="align-items: center;">
                 {% for picture in picturesOfProject %}
                     <div class="swiper-slide">
                         <div class="row">
@@ -35,7 +35,7 @@
             <div class="swiper-button-prev"></div>
         </div>
         <div thumbsSlider="" class="swiper mySwiper">
-            <div class="swiper-wrapper">
+            <div class="swiper-wrapper" style="align-items: center">
                 {% for picture in picturesOfProject %}
                     <div class="swiper-slide">
                         <img src="/media/{{ picture.pictureOfPost }}">
