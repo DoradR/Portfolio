@@ -1,7 +1,7 @@
-{% extends 'main_page.html' %}
+{% extends 'main_page_en.html' %}
 {% load static %}
 
-{% block tytul %}Kontakt{% endblock %}
+{% block tytul %}Contact{% endblock %}
 {% block static %}<link rel="stylesheet" href="{% static 'contact_page.css' %}">{% endblock %}
 
 {% block body %}
@@ -12,21 +12,21 @@
         <div class="row">
             <div class="col-sm-8">
                 <div class="nav-of-left-side">
-                    <h3>Skontaktuj się ze mną</h3>
+                    <h3>Contact with me</h3>
                 </div>
                 <div class="container">
                     <div class="content">
                       <div class="left-side">
                         <div class="address details">
                           <i class="fas fa-map-marker-alt"></i>
-                          <div class="topic">Adres</div>
+                          <div class="topic">Address</div>
                           <div class="text-one">55-300</div>
                           <div class="text-two">Środa Śląska</div>
                         </div>
                           {% for file in contact %}
                             <div class="phone details">
                               <i class="fas fa-phone-alt"></i>
-                              <div class="topic">Telefon</div>
+                              <div class="topic">Phone</div>
                               <div class="text-one">+48 {{ file.phoneOfContact }}</div>
                             </div>
                             <div class="email details">
@@ -37,20 +37,20 @@
                           {% endfor %}
                       </div>
                       <div class="right-side">
-                        <div class="topic-text">Wyślij mi wiadomość</div>
-                        <p>Jeżeli jesteś zainteresowany ofertą bądź masz jakiekolwiek pytania do mnie, wyślij mi wiadomość.</p>
+                        <div class="topic-text">Send me a message.</div>
+                        <p>If you are interested in an offer or have any questions to me, please send me a message.</p>
                       <form action="#">
                         <div class="input-box">
-                          <input type="text" placeholder="Wpisz swoje imię">
+                          <input type="text" placeholder="Enter your name">
                         </div>
                         <div class="input-box">
-                          <input type="text" placeholder="Wpisz swój email">
+                          <input type="text" placeholder="Enter your email">
                         </div>
                         <div class="input-box message-box">
-                          <input type="text" placeholder="Wpisz swoją wiadomość">
+                          <input type="text" placeholder="Enter your message">
                         </div>
                         <div class="button">
-                          <input type="button" value="Wyślij" >
+                          <input type="button" value="Send now" >
                         </div>
                       </form>
                     </div>
@@ -59,7 +59,7 @@
             </div>
             <div class="col-sm-4">
                 <div class="nav-of-right-side">
-                    <h3>Lokalizacja</h3>
+                    <h3>Location</h3>
                 </div>
                 <div class="map">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1838.63510463388!2d16.591373575532696!3d51.163863884749205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470fa3c120f22679%3A0xa131abaf64efb0c8!2zUnluZWsgLSDFmnJvZGEgxZpsxIVza2E!5e0!3m2!1spl!2sde!4v1672261502933!5m2!1spl!2sde" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

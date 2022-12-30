@@ -21,8 +21,13 @@ body {
 }
 
 .navbar-light .navbar-nav .nav-link {
-      color: rgb(255 255 255 / 55%)
-    }
+  color: rgb(255 255 255 / 55%)
+}
+
+.nav-item img{
+  height: 14px;
+  width: 20px;
+}
 
 @media only screen  and (max-width: 850px){
     .navbar-light .navbar-nav .nav-link {
